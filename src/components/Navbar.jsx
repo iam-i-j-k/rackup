@@ -234,7 +234,7 @@ const Navbar = () => {
 
 
 
-                                        <a href={`${option.link}`}>{option.title}</a>
+                                        {option.title}
                                       </div>
 
                                       {/* Children (visible when toggled) */}

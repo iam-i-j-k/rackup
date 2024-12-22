@@ -1,9 +1,9 @@
-'use client'
+'use client';
 
 import React, { useEffect, useRef } from "react";
 import * as d3 from "d3";
 
-const BarGraph = () => {
+const BarGraph = ({ width = 500, height = 300 }) => {
   const svgRef = useRef();
 
   useEffect(() => {
@@ -16,9 +16,6 @@ const BarGraph = () => {
       { label: "E", value: 20 },
     ];
 
-    // Dimensions
-    const width = 500;
-    const height = 300;
     const margin = { top: 20, right: 30, bottom: 40, left: 40 };
 
     // Clear the SVG
@@ -27,15 +24,17 @@ const BarGraph = () => {
     // Create an SVG element
     const svg = d3
       .select(svgRef.current)
-      .attr("width", width)
-      .attr("height", height);
+      .attr("viewBox", `0 0 ${width} ${height}`)
+      .attr("preserveAspectRatio", "xMidYMid meet")
+      .style("width", `${width}px`)
+      .style("height", `${height}px`);
 
     // Create scales
     const xScale = d3
       .scaleBand()
       .domain(data.map((d) => d.label))
       .range([margin.left, width - margin.right])
-      .padding(0.4); // Increased padding for more space between bars
+      .padding(0.4);
 
     const yScale = d3
       .scaleLinear()
@@ -71,7 +70,9 @@ const BarGraph = () => {
       .attr("width", xScale.bandwidth())
       .attr("fill", "steelblue");
 
-    // Add labels
+    // Add labels with dynamic font size
+    const fontSize = Math.min(width, height) / 20; // Scale font size dynamically
+
     svg
       .append("g")
       .selectAll("text")
@@ -80,10 +81,10 @@ const BarGraph = () => {
       .attr("x", (d) => xScale(d.label) + xScale.bandwidth() / 2)
       .attr("y", (d) => yScale(d.value) - 5)
       .attr("text-anchor", "middle")
-      .style("font-size", "12px")
+      .style("font-size", `${fontSize}px`) // Dynamic font size
       .style("fill", "black")
       .text((d) => d.value);
-  }, []);
+  }, [width, height]);
 
   return <svg ref={svgRef}></svg>;
 };

@@ -12,7 +12,7 @@ const Page = () => {
       <Back />
       <div className='h-screen m-5 p-5 rounded-xl bg-[#F0F3F5] overflow-auto'>
         <div className="overflow-x-auto">
-          <table className='w-full mt-5 border-2 border-slate-500 rounded-md min-w-[640px]'>
+          <table className='w-full mt-5 rounded-md min-w-[640px]'>
             <thead>
                 <tr>
                     <th className='border-b border-slate-500 font-semibold gap-10 p-2 min-w-[150px]'>Item ID</th>
@@ -35,20 +35,20 @@ const Page = () => {
             <tbody>
               {stocklevelsinfo.map((item, index) => (
                 <tr className='text-center' key={index}>
-                  <td className='border-b border-slate-500 p-2'>{item.id}</td>
-                  <td className='border-b border-slate-500 p-2'>{item.name}</td>
-                  <td className='border-b border-slate-500 p-2'>{item.quantity}</td>
-                  <td className='border-b border-slate-500 p-2'>{item.minimumStock}</td>
-                  <td className='border-b border-slate-500 p-2'>{item.location}</td>
-                  <td className='border-b border-slate-500 p-2'>{item.dimensions}</td>
-                  <td className='border-b border-slate-500 p-2'>{item.volume}</td>
-                  <td className='border-b border-slate-500 p-2'>{item.category}</td>
-                  <td className='border-b border-slate-500 p-2'>{item.subcategory}</td>
-                  <td className='border-b border-slate-500 p-2'>{item.reorderQuantity}</td>
-                  <td className='border-b border-slate-500 p-2'>{item.unit}</td>
-                  <td className='border-b border-slate-500 p-2'>{item.secondaryLocation}</td>
-                  <td className='border-b border-slate-500 p-2'>{item.weight}</td>
-                  <td className='border-b border-slate-500 p-2'>{item.material}</td>
+                  <td className='px-2 py-5'><a href="/inventory/stocklevels/infograph">{item.id}</a></td>
+                  <td className='px-2 py-5'>{item.name}</td>
+                  <td className='px-2 py-5'>{item.quantity}</td>
+                  <td className='px-2 py-5'>{item.minimumStock}</td>
+                  <td className='px-2 py-5'>{item.location}</td>
+                  <td className='px-2 py-5'>{item.dimensions}</td>
+                  <td className='px-2 py-5'>{item.volume}</td>
+                  <td className='px-2 py-5'>{item.category}</td>
+                  <td className='px-2 py-5'>{item.subcategory}</td>
+                  <td className='px-2 py-5'>{item.reorderQuantity}</td>
+                  <td className='px-2 py-5'>{item.unit}</td>
+                  <td className='px-2 py-5'>{item.secondaryLocation}</td>
+                  <td className='px-2 py-5'>{item.weight}</td>
+                  <td className='px-2 py-5'>{item.material}</td>
                 </tr>
               ))}
             </tbody>
