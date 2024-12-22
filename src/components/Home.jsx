@@ -7,16 +7,28 @@ const Home = () => {
     <div>
       <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
         <div>
-          <PieChart />
+          <PieChart 
+            width={400}
+            height={400}
+          />
         </div>
         <div>
-          <BarGraph />
+          <BarGraph 
+            width={600}
+            height={400}
+          />
         </div>
         <div>
-          <BarGraph />
+          <BarGraph
+            width={600}
+            height={400}
+          />
         </div>
         <div>
-          <PieChart />
+          <PieChart 
+            width={400}
+            height={400}
+          />
         </div>
       </div>
     </div>

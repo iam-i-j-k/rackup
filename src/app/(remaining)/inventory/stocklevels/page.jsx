@@ -6,7 +6,7 @@ import Image from 'next/image';
 const Page = () => {
     const start = 1;
     const size = 200;
-    const end = 200;
+    const end = 600;
   return (
     <div>
       <Back />
@@ -89,7 +89,7 @@ const Page = () => {
                     </svg>
                 </a>
             </div>
-            <div>
+            <div>   
                 <a className='flex' href="">
                     <svg xmlns="http://www.w3.org/2000/svg" width={20} height={20}  viewBox="0 0 100 100" fill="black">
                         <polygon points="80,50 20,10 20,90"/>

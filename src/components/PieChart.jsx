@@ -1,9 +1,9 @@
-'use client'
+'use client';
 
 import React, { useEffect, useRef } from "react";
 import * as d3 from "d3";
 
-const PieChart = () => {
+const PieChart = ({ width = 500, height = 500 }) => {
   const svgRef = useRef();
 
   useEffect(() => {
@@ -16,9 +16,7 @@ const PieChart = () => {
       { label: "E", value: 20 },
     ];
 
-    // Dimensions
-    const width = 500;
-    const height = 500;
+    // Calculate radius
     const radius = Math.min(width, height) / 2;
 
     // Clear the SVG
@@ -59,10 +57,10 @@ const PieChart = () => {
       .append("text")
       .attr("transform", (d) => `translate(${arc.centroid(d)})`)
       .attr("text-anchor", "middle")
-      .style("font-size", "12px")
+      .style("font-size", `${Math.min(width, height) / 25}px`) // Dynamic font size
       .style("fill", "white")
       .text((d) => d.data.label);
-  }, []);
+  }, [width, height]);
 
   return <svg ref={svgRef}></svg>;
 };
