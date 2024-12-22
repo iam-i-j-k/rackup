@@ -16,7 +16,7 @@ const BarGraph = ({ width = 500, height = 300 }) => {
       { label: "E", value: 20 },
     ];
 
-    const margin = { top: 20, right: 30, bottom: 40, left: 40 };
+    const margin = { top: 60, right: 30, bottom: 40, left: 40 };
 
     // Clear the SVG
     d3.select(svgRef.current).selectAll("*").remove();

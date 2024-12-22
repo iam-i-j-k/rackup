@@ -16,7 +16,6 @@ const Page = () => {
     e.preventDefault();
     if (email === "user1@rackup.com" && password === "12345678") {
       setLogin(true);
-      alert("Login Successful");
       router.push('/dashboard'); // Redirect to the dashboard
     } else {
       alert("Invalid credentials. Please try again.");
@@ -78,7 +77,7 @@ const Page = () => {
                   className="absolute top-[50%] right-3 transform -translate-y-[50%] text-xl cursor-pointer text-gray-600"
                   onClick={() => setShowPassword(!showPassword)}
                 >
-                  {showPassword ? <IoEye /> : <IoEyeOff />}
+                  {showPassword ? <IoEyeOff /> : <IoEye />}
                 </div>
               </div>
             </div>

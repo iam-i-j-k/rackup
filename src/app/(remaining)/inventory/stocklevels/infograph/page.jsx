@@ -6,9 +6,15 @@ const page = () => {
   return (
     <div>
         <h2 className="font-semibold text-lg m-4">
-                  Maaza Mango Drink, Original Flavour, 1.2L PET Bottle
-                </h2>
-        <BarGraph />
+            Maaza Mango Drink, Original Flavour, 1.2L PET Bottle
+        </h2>
+        <div className='m-5'>
+            <BarGraph 
+                width= {1200}
+                height={900}
+
+            />
+        </div>
         <div className="h-auto m-5 p-5 rounded-xl bg-[#F0F3F5]">
                 <h2 className="font-semibold text-lg mb-4">
                   Maaza Mango Drink, Original Flavour, 1.2L PET Bottle

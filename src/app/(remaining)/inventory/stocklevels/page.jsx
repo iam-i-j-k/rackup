@@ -1,14 +1,12 @@
 import React from 'react';
 import Back from '@/components/Back';
 import { stocklevelsinfo } from '@/data/stocklevelsinfo';
-import Image from 'next/image';
+import Footpage from '@/components/Footpage';
 
 const Page = () => {
-    const start = 1;
-    const size = 200;
-    const end = 600;
   return (
     <div>
+        
       <Back />
       <div className='h-screen m-5 p-5 rounded-xl bg-[#F0F3F5] overflow-auto'>
         <div className="overflow-x-auto">
@@ -55,56 +53,9 @@ const Page = () => {
           </table>
         </div>
       </div>
+      
       <footer className='bg-[#F0F3F5]'>
-        <div className='flex items-center justify-around p-5'>
-            <div>
-                <p>Page {start}</p>
-            </div>
-            <div>
-                <a className='flex' href="">
-                    <svg xmlns="http://www.w3.org/2000/svg" width={20} height={20} viewBox="0 0 100 100" fill="black">
-                        <polygon points="20,50 80,10 80,90"/>
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" width={20} height={20} viewBox="0 0 100 100" fill="black">
-                        <polygon points="20,50 80,10 80,90"/>
-                    </svg>
-                </a>
-            </div>
-            <div>
-                <a href="">
-                    <svg xmlns="http://www.w3.org/2000/svg" width={20} height={20} viewBox="0 0 100 100" fill="black">
-                        <polygon points="20,50 80,10 80,90"/>
-                    </svg>
-                </a>
-            </div>
-            <div>
-                <div className='bg-white w-20 h-10 flex items-center justify-center rounded-xl'>
-                    <p>{`${start} to ${size}`}</p>
-                </div>
-            </div>
-            <div>
-                <a href="">
-                    <svg xmlns="http://www.w3.org/2000/svg" width={20} height={20}  viewBox="0 0 100 100" fill="black">
-                        <polygon points="80,50 20,10 20,90"/>
-                    </svg>
-                </a>
-            </div>
-            <div>   
-                <a className='flex' href="">
-                    <svg xmlns="http://www.w3.org/2000/svg" width={20} height={20}  viewBox="0 0 100 100" fill="black">
-                        <polygon points="80,50 20,10 20,90"/>
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" width={20} height={20}  viewBox="0 0 100 100" fill="black">
-                        <polygon points="80,50 20,10 20,90"/>
-                    </svg>
-                </a>
-            </div>
-            <div>
-                <p>of {end}</p>
-            </div>
-            
-
-        </div>
+        <Footpage />
       </footer>
     </div>
   );
