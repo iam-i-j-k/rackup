@@ -5,7 +5,7 @@ const Footpage = () => {
     const size = 200;
     const end = 600;
   return (
-    <div>
+    <div className='bg-[#F0F3F5]'>
         <div className='flex items-center justify-around p-5'>
             <div>
                 <p>Page {start}</p>

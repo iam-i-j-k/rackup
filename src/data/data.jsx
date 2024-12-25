@@ -18,8 +18,11 @@ export const data = [
       "children": [
         { "id": 201, "title": "Incoming Orders", "link": "/order/incomingorders" },
         { "id": 202, "title": "Outgoing Shipments", "link": "/order/outgoingshipments" },
-        { "id": 203, "title": "Return Orders", "link": "/order/returnorders" },
-        { "id": 204, "title": "Reports", "link": "/order/reports" }
+        { "id": 203, "title": "New Shipment Order", "link": "/order/newshipmentorder" },
+        { "id": 204, "title": "New Outgoing Shipment", "link": "/order/newoutgoingshipment" },
+        { "id": 205, "title": "Create a Return Order", "link": "/order/createreturnorder" },
+        { "id": 206, "title": "Return Orders", "link": "/order/returnorders" },
+        { "id": 207, "title": "Reports", "link": "/order/reports" }
       ]
     },
     {
@@ -28,9 +31,10 @@ export const data = [
       "link": "/vendor",
       "children": [
         { "id": 301, "title": "Vendor List", "link": "/vendor/vendorlist" },
-        { "id": 302, "title": "Vendor Orders", "link": "/vendor/vendororders" },
-        { "id": 303, "title": "Communication Logs", "link": "/vendor/communicationlogs" },
-        { "id": 304, "title": "Vendor Performance", "link": "/vendor/vendorperformance" }
+        { "id": 302, "title": "Add Vendor", "link": "/vendor/addvendor" },
+        { "id": 303, "title": "Vendor Orders", "link": "/vendor/vendororders" },
+        { "id": 304, "title": "Communication Logs", "link": "/vendor/communicationlogs" },
+        { "id": 305, "title": "Vendor Performance", "link": "/vendor/vendorperformance" }
       ]
     },
     {

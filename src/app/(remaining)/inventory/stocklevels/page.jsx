@@ -7,7 +7,6 @@ const Page = () => {
   return (
     <div>
         
-      <Back />
       <div className='h-screen my-5 py-5 rounded-xl bg-[#F0F3F5] overflow-auto'>
         <div className="overflow-x-auto">
           <table className='w-full mt-5 rounded-md min-w-[640px]'>
@@ -33,7 +32,7 @@ const Page = () => {
             <tbody>
               {stocklevelsinfo.map((item, index) => (
                 <tr className={`text-center ${
-                    index % 2 === 0 ? 'bg-white' : 'bg-gray-100'
+                    index % 2 === 0 ? 'bg-white' : 'bg-[#F0F3F5]'
                   }`} key={index}>
                   <td className='py-5'><a href="/inventory/stocklevels/infograph">{item.id}</a></td>
                   <td className='py-5'>{item.name}</td>
