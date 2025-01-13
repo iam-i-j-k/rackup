@@ -1,68 +1,44 @@
 'use client';
 
-import React, { useEffect, useRef } from "react";
-import * as d3 from "d3";
+import React from 'react';
+import { PieChart, Pie, Tooltip, Cell, ResponsiveContainer, Legend } from 'recharts';
 
-const PieChart = ({ width = 500, height = 500 }) => {
-  const svgRef = useRef();
+// Sample data for the Pie Chart
+const data = [
+  { name: 'Chrome', value: 400 },
+  { name: 'Safari', value: 300 },
+  { name: 'Firefox', value: 300 },
+  { name: 'Edge', value: 200 },
+  { name: 'Other', value: 100 },
+];
 
-  useEffect(() => {
-    // Data
-    const data = [
-      { label: "A", value: 30 },
-      { label: "B", value: 70 },
-      { label: "C", value: 50 },
-      { label: "D", value: 40 },
-      { label: "E", value: 20 },
-    ];
+const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#FF64C7'];
 
-    // Calculate radius
-    const radius = Math.min(width, height) / 2;
-
-    // Clear the SVG
-    d3.select(svgRef.current).selectAll("*").remove();
-
-    // Create an SVG element
-    const svg = d3
-      .select(svgRef.current)
-      .attr("width", width)
-      .attr("height", height)
-      .append("g")
-      .attr("transform", `translate(${width / 2}, ${height / 2})`);
-
-    // Create a color scale
-    const color = d3.scaleOrdinal(d3.schemeCategory10);
-
-    // Create a pie generator
-    const pie = d3.pie().value((d) => d.value);
-
-    // Create an arc generator
-    const arc = d3.arc().innerRadius(0).outerRadius(radius);
-
-    // Bind data and append slices
-    const arcs = svg
-      .selectAll("arc")
-      .data(pie(data))
-      .enter()
-      .append("g")
-      .attr("class", "arc");
-
-    arcs
-      .append("path")
-      .attr("d", arc)
-      .attr("fill", (d, i) => color(i));
-
-    // Add labels
-    arcs
-      .append("text")
-      .attr("transform", (d) => `translate(${arc.centroid(d)})`)
-      .attr("text-anchor", "middle")
-      .style("font-size", `${Math.min(width, height) / 25}px`) // Dynamic font size
-      .style("fill", "white")
-      .text((d) => d.data.label);
-  }, [width, height]);
-
-  return <svg ref={svgRef}></svg>;
+const PieGraph = () => {
+  return (
+    <div className="max-w-4xl mx-auto mt-10 p-6 bg-white rounded-lg shadow-md">
+      <h2 className="text-xl font-semibold text-center mb-4">Browser Market Share</h2>
+      <ResponsiveContainer width="100%" height={400}>
+        <PieChart>
+          <Tooltip />
+          <Legend />
+          <Pie
+            data={data}
+            dataKey="value"
+            nameKey="name"
+            outerRadius="80%"
+            label
+            fill="#8884d8"
+            paddingAngle={5}
+          >
+            {data.map((entry, index) => (
+              <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+            ))}
+          </Pie>
+        </PieChart>
+      </ResponsiveContainer>
+    </div>
+  );
 };
 
-export default PieChart;
+export default PieGraph;
