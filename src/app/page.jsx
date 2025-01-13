@@ -73,11 +73,11 @@ const Page = () => {
                   placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;"
                   required
                 />
-                <div
+                <div 
                   className="absolute top-[50%] right-3 transform -translate-y-[50%] text-xl cursor-pointer text-gray-600"
                   onClick={() => setShowPassword(!showPassword)}
                 >
-                  {showPassword ? <IoEyeOff /> : <IoEye />}
+                  {showPassword ? <IoEyeOff title='Hide' /> : <IoEye title='Show' />}
                 </div>
               </div>
             </div>
@@ -86,6 +86,7 @@ const Page = () => {
             </div>
             <div className="flex items-center justify-center">
               <button
+                title="Login"
                 type="submit"
                 className="text-white bg-[#481620] hover:bg-[#41111b] focus:ring-4 focus:outline-none focus:ring-blue-300 font-light text-sm w-full sm:w-auto px-[5rem] py-2.5 text-center"
               >
