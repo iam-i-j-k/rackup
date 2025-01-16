@@ -87,7 +87,9 @@ export const data = [
       "id": 8,
       "title": "Knowledge Management",
       "link": "/knowledge-management",
-      "children": null
+      "children": [
+        { "id": 801, "title": "Knowledge Management", "link": "/knowledge-management/" }
+      ]
     }
   ];
   

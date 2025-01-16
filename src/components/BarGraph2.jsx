@@ -5,19 +5,17 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Responsive
 
 // Bar Graph Data for Inventory Levels
 const barData = [
-  { name: 'Apparel', count: 4000, value: 8000 },    
-  { name: 'Furniture', count: 3000, value: 10000 },  
-  { name: 'Electronics', count: 5000, value: 12000 },
-  { name: 'Food', count: 2000, value: 6000 },      
-  { name: 'Books', count: 1500, value: 5000 },       
-];
-
-
+    { name: 'Miscellaneous', items: 1000, reserved: 500 },
+    { name: 'Packaging Supplies', items: 3000, reserved: 1000 },
+    { name: 'Raw Materials', items: 4000, reserved: 1500 },
+    { name: 'Finished Goods', items: 2500, reserved: 1200 },
+    { name: 'Spare Parts', items: 2000, reserved: 900 },
+  ];
 
 
 const COLORS = ['#4CAF50', '#FFC107', '#F44336', '#2196F3'];
 
-const BarGraph = () => {
+const BarGraph2 = () => {
   return (
     <div className="max-w-4xl mx-auto mt-10 p-6 bg-white rounded-lg shadow-md">
       <h2 className="text-xl font-semibold text-center mb-4">Inventory Levels by Category</h2>
@@ -28,13 +26,13 @@ const BarGraph = () => {
           <YAxis />
           <Tooltip />
           <Legend />
-          <Bar dataKey="count" fill="#8884d8" barSize={30} radius={[5, 5, 0, 0]} name="Available"/>
-          <Bar dataKey="value" fill="#82ca9d" barSize={30} radius={[5, 5, 0, 0]} name="Percentage" />
+          <Bar dataKey="items" fill="#8884d8" barSize={30} radius={[5, 5, 0, 0]} name="Available" />
+          <Bar dataKey="reserved" fill="#82ca9d" barSize={30} radius={[5, 5, 0, 0]} name="Reserved" />
+
         </BarChart>
       </ResponsiveContainer>
     </div>
   );
 };
 
-
-export default BarGraph
+export default BarGraph2

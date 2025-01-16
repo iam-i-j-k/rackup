@@ -173,4 +173,32 @@ body {
 }
 
 
+input[type="checkbox"] {
+  /* appearance: none; */
+  -webkit-appearance: none; /* For Safari */
+  width: 20px;
+  height: 20px;
+  border: 2px solid #4b5563; /* Border color */
+  border-radius: 4px; /* Optional: for rounded corners */
+  background-color: #fff; /* Background color */
+  cursor: pointer;
+  position: relative;
+}
 
+input[type="checkbox"]:checked {
+  background-color: #fff; /* Background color when checked */
+  border-color: #000; /* Border color when checked */
+}
+
+input[type="checkbox"]:checked::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 10px;
+  border: solid black; /* Tick color */
+  border-width: 0 2px 2px 0;
+  transform: translate(-50%, -60%) rotate(45deg);
+  transform-origin: center;
+}

@@ -1,6 +1,8 @@
 import React from 'react'
 import PieChart from './PieChart'
 import BarGraph from './BarGraph'
+import BarGraph2 from './BarGraph2'
+import PieGraph2 from './PieChart2'
 
 const Home = () => {
   return (
@@ -19,13 +21,13 @@ const Home = () => {
           />
         </div>
         <div>
-          <BarGraph
+          <BarGraph2
             width={600}
             height={400}
           />
         </div>
         <div>
-          <PieChart 
+          <PieGraph2
             width={400}
             height={400}
           />

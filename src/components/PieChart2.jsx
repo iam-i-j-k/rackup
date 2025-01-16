@@ -1,23 +1,24 @@
 "use client";
 
-
 import React from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { PieChart, Pie, Cell } from 'recharts';
 
 
+// Pie Chart Data for Order Status
 const pieData = [
-  { name: 'Delivered', value: 600 },
-  { name: 'Pending', value: 300 },
-  { name: 'Cancelled', value: 100 },
-  { name: 'In Transit', value: 200 },
+    { name: 'Returned', value: 200 },
+    { name: 'Shipped', value: 800 },
+    { name: 'Processing', value: 500 },
+    { name: 'Awaiting Shipment', value: 300 },
 ];
 
 const COLORS = ['#4CAF50', '#FFC107', '#F44336', '#2196F3'];
 
-const PieGraph = () => {
+
+const PieGraph2 = () => {
   return (
-    <div className="max-w-4xl mx-auto mt-10 p-6 bg-white rounded-lg shadow-md">
+    <div className="max-w-4xl mx-auto mt-10 py-6 bg-white rounded-lg shadow-md">
       <h2 className="text-xl font-semibold text-center mb-4">Order Status Breakdown</h2>
       <ResponsiveContainer width="100%" height={400}>
         <PieChart>
@@ -42,5 +43,4 @@ const PieGraph = () => {
   );
 };
 
-
-export default PieGraph
+export default PieGraph2

@@ -3,9 +3,28 @@
 import React, { useEffect, useState } from 'react'
 import { data } from '../data/data'
 import Image from 'next/image';
+import NotificationTab from './NotificationTab';
 
+
+const initialNotifications = [
+  { id: 1, title: "New Message", message: "You have a new message from John", time: "5 minutes ago" },
+  { id: 2, title: "Meeting Reminder", message: "Team meeting in 30 minutes", time: "25 minutes ago" },
+  { id: 3, title: "Task Update", message: "Your task 'Create presentation' is due tomorrow", time: "1 hour ago" },
+];
 
 const Navbar = () => {
+
+  const [showNotifications, setShowNotifications] = useState(false);
+  const [notifications, setNotifications] = useState(initialNotifications);
+
+  const toggleNotifications = () => {
+    setShowNotifications(!showNotifications);
+  };
+
+  const clearNotifications = () => {
+    setNotifications([]);
+  };
+
     
   const [openItems, setOpenItems] = useState({}); // Track open state for each item
 
@@ -14,16 +33,16 @@ const Navbar = () => {
   };
 
   const [search, setSearch] = useState('')
-    const [dropdown, setDropdown] = useState(false)
-    const [moreDropdown, setMoreDropdown] = useState(false)
-        
-    const handleDropdown = () =>{
-        setDropdown(!dropdown)
-    }
-    
-    const handleMoreDropdown = () =>{
-        setMoreDropdown(!moreDropdown)
-    }
+  const [dropdown, setDropdown] = useState(false)
+  const [moreDropdown, setMoreDropdown] = useState(false)
+      
+  const handleDropdown = () =>{
+      setDropdown(!dropdown)
+  }
+  
+  const handleMoreDropdown = () =>{
+      setMoreDropdown(!moreDropdown)
+  }
 
   return (
     <div className='font-Onest'>
@@ -75,20 +94,33 @@ const Navbar = () => {
               <div className="flex items-center space-x-4">
                 {/* Notification Icon */}
                 <div className="relative">
-                  <span className="absolute top-[-4px] right-[-4px] text-center text-[10px] h-4 min-w-4 w-fit rounded-full bg-red-500 text-white">
-                    1
-                  </span>
-                  <a href="#">
+                  <button 
+                    onClick={toggleNotifications} 
+                    className="relative p-2 text-[#005D80] hover:text-gray-800 focus:text-gray-800"
+                    aria-label="Notifications"
+                  >
                     <svg
                       viewBox="0 0 16 16"
                       xmlns="http://www.w3.org/2000/svg"
-                      className="w-6 h-6 md:w-7"
-                      fill="#005D80"
+                      className="w-6 h-6"
+                      fill="currentColor"
                     >
                       <path d="M13,5c0-2.761-2.239-5-5-5S3,2.239,3,5v5l-3,2v1h16v-1l-3-2V5z" />
                       <path d="M10,14H6c0,1.105,0.895,2,2,2S10,15.105,10,14z" />
                     </svg>
-                  </a>
+                    {notifications.length > 0 && (
+                      <span className="absolute top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-white transform translate-x-1/2 -translate-y-1/2 bg-red-500 rounded-full">
+                        {notifications.length}
+                      </span>
+                    )}
+                  </button>
+                  {showNotifications && (
+                    <NotificationTab
+                      notifications={notifications}
+                      onClose={() => setShowNotifications(false)}
+                      onClear={clearNotifications}
+                    />
+                  )}
                 </div>
   
                 {/* User Profile */}
@@ -151,9 +183,17 @@ const Navbar = () => {
                   <a
                     onClick={handleMoreDropdown}
                     id="dropdownNavbarLink"
-                    className="cursor-pointer hover:underline w-full text-gray-900 hover:bg-gray-100"
+                    className="cursor-pointer flex items-center hover:underline w-full text-gray-900 hover:bg-gray-100"
                   >
                     All
+                    <svg
+                                          className={`w-4 h-4 transform rotate-90`}
+                                          fill="black"
+                                          viewBox="0 0 100 100"
+                                          xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                          <path d="M25 20 Q25 25 25 80 Q50 65 75 50 Q50 35 25 20 Z" />
+                                        </svg>
                     
                   </a>
                   {/* Dropdown Menu */}
