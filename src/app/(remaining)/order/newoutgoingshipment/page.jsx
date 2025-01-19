@@ -10,7 +10,7 @@ const page = () => {
       />
       <div className="h-auto m-5 p-5 rounded-xl bg-[#F0F3F5]">
         <h2 className="font-semibold text-lg mb-4">
-          New Shipment Order
+          Outgoing Shipment
         </h2>
         <form className="w-full p-5 grid gap-x-10 sm:grid-cols-1 md:grid-cols-2">
           {newoutgoingshipment.map((option) => (

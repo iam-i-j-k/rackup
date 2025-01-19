@@ -26,7 +26,7 @@ export const inventoryauditinfo = [
         paymentmethod: 'Bank transfer',
     },
     {
-        status: '/warning.svg',
+        status: '/success.svg',
         id: "ITM0039",
         description: "Maaza  Mango Drink, Original Flavour, 1.2L PET Bottle",
         auditDate: "18/10/2024",
@@ -104,7 +104,7 @@ export const inventoryauditinfo = [
         paymentmethod: 'Bank transfer',
     },
     {
-        status: '/warning.svg',
+        status: '/failed.svg',
         id: "ITM0039",
         description: "Maaza  Mango Drink, Original Flavour, 1.2L PET Bottle",
         auditDate: "18/10/2024",
@@ -156,7 +156,7 @@ export const inventoryauditinfo = [
         paymentmethod: 'Bank transfer',
     },
     {
-        status: '/warning.svg',
+        status: '/success.svg',
         id: "ITM0039",
         description: "Maaza  Mango Drink, Original Flavour, 1.2L PET Bottle",
         auditDate: "18/10/2024",
@@ -208,7 +208,7 @@ export const inventoryauditinfo = [
         paymentmethod: 'Bank transfer',
     },
     {
-        status: '/warning.svg',
+        status: '/success.svg',
         id: "ITM0039",
         description: "Maaza  Mango Drink, Original Flavour, 1.2L PET Bottle",
         auditDate: "18/10/2024",

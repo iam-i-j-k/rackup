@@ -80,7 +80,6 @@ export const data = [
         { "id": 701, "title": "Invoice Creation", "link": "/invoice/invoicecreation" },
         { "id": 702, "title": "Invoice Tracking", "link": "/invoice/invoicetracking" },
         { "id": 703, "title": "Payment Status", "link": "/invoice/paymentstatus" },
-        { "id": 704, "title": "Invoice History", "link": "/invoice/invoicehistory" }
       ]
     },
     {

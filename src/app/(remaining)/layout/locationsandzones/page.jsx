@@ -6,7 +6,7 @@ const page = () => {
     <div>
 
         <div>
-            <h1 className='m-5'>
+            <h1 className='m-5 font-semibold'>
                 Site Map
             </h1>
             <div className='flex items-center justify-center'>

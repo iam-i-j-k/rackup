@@ -10,11 +10,12 @@ const page = () => {
               <div className="overflow-x-auto">
                 <table className="w-full mt-5 rounded-md min-w-[640px]">
                   <thead>
-                    <tr>
-                      <th className="border-b border-slate-500 font-semibold gap-10 py-2 min-w-[100px]">Name</th>
-                      <th className="border-b border-slate-500 font-semibold gap-10 py-2 min-w-[150px]">Employee ID</th>
-                      <th className="border-b border-slate-500 font-semibold gap-10 py-2 min-w-[180px]">Job Title</th>
-                      <th className="border-b border-slate-500 font-semibold gap-10 py-2 min-w-[80px]"></th>
+                    <tr className='border-b border-slate-500'>
+                      <th className="font-semibold gap-10 py-2 min-w-[100px]">Name</th>
+                      <th className="font-semibold gap-10 py-2 min-w-[150px]">Employee ID</th>
+                      <th className="font-semibold gap-10 py-2 min-w-[180px]">Job Title</th>
+                      <th className="font-semibold gap-10 py-2 min-w-[80px]">Log In</th>
+                      <th className="font-semibold gap-10 py-2 min-w-[80px]">Log Out</th>
                     </tr>
                   </thead>
                   <tbody>

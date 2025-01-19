@@ -4,7 +4,7 @@ import React from 'react'
 const page = () => {
   return (
     <div>
-        <h2 className='m-5'>Order Fulfillment</h2>
+        <h2 className='m-5 font-semibold'>Order Fulfillment</h2>
         <div>
             <BarGraph2 />
         </div>

@@ -17,7 +17,7 @@ const COLORS = ['#4CAF50', '#FF9800', '#F44336', '#9C27B0', '#3F51B5'];
 const VendorGraph = () => {
   return (
     <div style={{ width: '100%', height: 400 }}>
-      <h2 style={{ textAlign: 'center', marginBottom: '20px' }}>Vendor Performance Metrics</h2>
+      <h2 className='font-semibold' style={{ textAlign: 'center', marginBottom: '20px' }}>Vendor Performance Metrics</h2>
       <ResponsiveContainer width="100%" height="100%">
         <PieChart>
           <Pie

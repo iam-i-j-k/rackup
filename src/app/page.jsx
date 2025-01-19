@@ -1,8 +1,8 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import { IoEye, IoEyeOff } from "react-icons/io5";
-import Image from 'next/image'
+import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 
 const Page = () => {
@@ -11,15 +11,21 @@ const Page = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const router = useRouter();
+  const [isLoading, setIsLoading] = useState(false);
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
-    if (email === "user1@rackup.com" && password === "12345678") {
-      setLogin(true);
-      router.push('/dashboard'); // Redirect to the dashboard
-    } else {
-      alert("Invalid credentials. Please try again.");
-    }
+    setIsLoading(true); // Start loading
+    // Simulate an API call
+    setTimeout(() => {
+      if (email === "user1@rackup.com" && password === "12345678") {
+        setLogin(true);
+        router.push('/dashboard'); // Redirect to the dashboard
+      } else {
+        alert("Invalid credentials. Please try again.");
+      }
+      setIsLoading(false); // Stop loading
+    }, 2000); // Simulate 2 seconds delay
   };
 
   return (
@@ -88,9 +94,15 @@ const Page = () => {
               <button
                 title="Login"
                 type="submit"
-                className="text-white bg-[#481620] hover:bg-[#41111b] focus:ring-4 focus:outline-none focus:ring-blue-300 font-light text-sm w-full sm:w-auto px-[5rem] py-2.5 text-center"
+                disabled={isLoading} // Disable button during loading
+                className={`text-white ${isLoading ? 'bg-gray-500 cursor-not-allowed' : 'bg-[#481620] hover:bg-[#41111b]'} focus:ring-4 focus:outline-none focus:ring-blue-300 font-light text-sm w-full sm:w-auto px-[5rem] py-2.5 text-center`}
               >
-                Login
+                {isLoading ? (
+                  <div className="flex items-center justify-center gap-2">
+                    <div className="animate-spin w-5 h-5 border-2 border-white border-t-transparent rounded-full"></div>
+                    Loading...
+                  </div>
+                ) : 'Login'}
               </button>
             </div>
           </form>

@@ -51,7 +51,7 @@ const Navbar = () => {
             <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
               {/* Logo */}
               <a
-                href="https://rackup.com/"
+                href="https://rackup.vercel.app/dashboard"
                 className="flex items-center space-x-3 rtl:space-x-reverse"
               >
                 <img src="/box.svg" alt="Box" />

@@ -39,7 +39,7 @@ const Page = () => {
             <p>To: </p>
             <p>Subject: </p>
             <p className='text-3xl'><MdEmail /></p>
-            <Link href='#'>show email details</Link>
+            <Link className='hover:underline' href='#'>show email details</Link>
           </div>
           <div className='flex flex-col space-y-5'>
             <p>Warehouse</p>

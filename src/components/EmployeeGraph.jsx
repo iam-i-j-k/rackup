@@ -17,7 +17,7 @@ const COLORS = ['#4CAF50', '#FFC107', '#2196F3', '#FF5722', '#9E9E9E'];
 const EmployeeGraph = () => {
   return (
     <div style={{ width: '100%', height: 400 }}>
-      <h2 style={{ textAlign: 'center', marginBottom: '20px' }}>Employee Productivity Metrics</h2>
+      <h2 className='font-semibold' style={{ textAlign: 'center', marginBottom: '20px' }}>Employee Productivity Metrics</h2>
       <ResponsiveContainer width="100%" height="100%">
         <PieChart>
           <Pie
