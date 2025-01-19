@@ -4,6 +4,8 @@ import React, { useEffect, useState } from 'react'
 import { data } from '../data/data'
 import Image from 'next/image';
 import NotificationTab from './NotificationTab';
+import Favourites from './Favourites';
+import History from './History';
 
 
 const initialNotifications = [
@@ -16,10 +18,30 @@ const Navbar = () => {
 
   const [showNotifications, setShowNotifications] = useState(false);
   const [notifications, setNotifications] = useState(initialNotifications);
+  const [favourites, setFavourites] = useState(false)
+  const [history, setHistory] = useState(false)
 
   const toggleNotifications = () => {
     setShowNotifications(!showNotifications);
+    setFavourites(false);
+    setHistory(false)
+    setMoreDropdown(false)
   };
+
+  const toggleFavourites = () => {
+    setFavourites(!favourites);
+    setHistory(false)
+    setShowNotifications(false)
+    setMoreDropdown(false)
+  };
+
+  const toggleHistory = () =>{
+    setHistory(!history)
+    setFavourites(false);
+    setMoreDropdown(false)
+    setShowNotifications(false)
+
+  }
 
   const clearNotifications = () => {
     setNotifications([]);
@@ -42,6 +64,9 @@ const Navbar = () => {
   
   const handleMoreDropdown = () =>{
       setMoreDropdown(!moreDropdown)
+      setFavourites(false);
+      setHistory(false)
+      setShowNotifications(false)
   }
 
   return (
@@ -187,13 +212,13 @@ const Navbar = () => {
                   >
                     All
                     <svg
-                                          className={`w-4 h-4 transform rotate-90`}
-                                          fill="black"
-                                          viewBox="0 0 100 100"
-                                          xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                          <path d="M25 20 Q25 25 25 80 Q50 65 75 50 Q50 35 25 20 Z" />
-                                        </svg>
+                      className={`w-4 h-4 transform rotate-90`}
+                      fill="black"
+                      viewBox="0 0 100 100"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path d="M25 20 Q25 25 25 80 Q50 65 75 50 Q50 35 25 20 Z" />
+                    </svg>
                     
                   </a>
                   {/* Dropdown Menu */}
@@ -218,7 +243,6 @@ const Navbar = () => {
                               id="default-search"
                               className="text-center block w-full h-10 px-4 py-0 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-white focus:ring-blue-500 focus:border-blue-500"
                               placeholder="Search"
-                              
                             />
                             <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
                               <svg
@@ -304,14 +328,28 @@ const Navbar = () => {
                   )}
                 </li>
                 <li>
-                  <a href="#" className="text-gray-900 dark:text-white hover:underline">
-                    Favourites
-                  </a>
+                  <div className='relative'>
+                    <button onClick={toggleFavourites} className="text-gray-900 dark:text-white hover:underline">
+                      Favourites
+                    </button>
+                    { favourites && (
+                      <Favourites
+                      onClose={() => setFavourites(false)}
+                      />
+                    ) }
+                  </div>
                 </li>
                 <li>
-                  <a href="#" className="text-gray-900 dark:text-white hover:underline">
-                    History
-                  </a>
+                <div className='relative'>
+                    <button onClick={toggleHistory} className="text-gray-900 dark:text-white hover:underline">
+                      History
+                    </button>
+                    { history && (
+                      <History
+                      onClose={() => setHistory(false)}
+                      />
+                    ) }
+                  </div>
                 </li>
               </ul>
             </div>
