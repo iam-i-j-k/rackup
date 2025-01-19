@@ -14,7 +14,7 @@ const page = () => {
                       <th className="border-b border-slate-500 font-semibold gap-10 py-2 min-w-[100px]">Name</th>
                       <th className="border-b border-slate-500 font-semibold gap-10 py-2 min-w-[150px]">Employee ID</th>
                       <th className="border-b border-slate-500 font-semibold gap-10 py-2 min-w-[180px]">Job Title</th>
-                      <th className="border-b border-slate-500 font-semibold gap-10 py-2 min-w-[80px]">Read</th>
+                      <th className="border-b boer-slate-500 font-semibold gap-10 py-2 min-w-[80px]">Read</th>
                       <th className="border-b border-slate-500 font-semibold gap-10 py-2 min-w-[80px]">Create</th>
                       <th className="border-b border-slate-500 font-semibold gap-10 py-2 min-w-[80px]">Edit</th>
                     </tr>
@@ -31,11 +31,11 @@ const page = () => {
                         <td className="px-2 py-5">{item.EmployeeId}</td>
                         <td className="px-2 py-5">{item.JobTitle}</td>
                         <td className="px-2 py-5"><input 
-                          type='checkbox' checked={item.read} readOnly /></td>
+                          type='checkbox' checked={item.read} /></td>
                         <td className="px-2 py-5"><input 
-                          type='checkbox' checked={item.create} readOnly /></td>
+                          type='checkbox' checked={item.create} /></td>
                         <td className="px-2 py-5"><input 
-                          type='checkbox' checked={item.edit} readOnly /></td>
+                          type='checkbox' checked={item.edit} /></td>
                       </tr>
                     ))}
                   </tbody>

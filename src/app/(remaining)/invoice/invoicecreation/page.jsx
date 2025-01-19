@@ -24,6 +24,11 @@ const page = () => {
                     </div>
                   ))}
                    
+                   <div className="md:col-span-2 flex justify-end">
+                    <button className="bg-[#481620] w-[7rem] text-white py-2 px-2 rounded-xl">
+                      Create
+                    </button>
+                  </div>
                 
                 </form>
             </div>

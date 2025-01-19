@@ -34,7 +34,7 @@ const Page = () => {
                 <tr className={`text-center ${
                     index % 2 === 0 ? 'bg-white' : 'bg-[#F0F3F5]'
                   }`} key={index}>
-                  <td className='py-5'><a href="/inventory/stocklevels/infograph">{item.id}</a></td>
+                  <td className='py-5'><a className='hover:underline text-blue-400' href="/inventory/stocklevels/infograph">{item.id}</a></td>
                   <td className='py-5'>{item.name}</td>
                   <td className='py-5'>{item.quantity}</td>
                   <td className='py-5'>{item.minimumStock}</td>
