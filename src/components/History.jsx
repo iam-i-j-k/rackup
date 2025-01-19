@@ -20,8 +20,9 @@ const History = ({ onClose }) => {
       </div>
       <div className="max-h-80 overflow-y-auto p-5 gap-10 space-y-5">
         <div className='flex items-center gap-5'>
-            <a className='flex justify-center items-center gap-5' href="/vendor/vendorlist">
-                <p className='text-sm'>Vendor List</p>
+            <a className='flex justify-between items-center gap-5 w-full' href="/vendor/vendorlist">
+                <p className='text-lg'>Vendor List</p>
+                <p className='text-xs text-gray-500'>4min ago</p>
             </a>
         </div>
         <div className='flex items-center'>
