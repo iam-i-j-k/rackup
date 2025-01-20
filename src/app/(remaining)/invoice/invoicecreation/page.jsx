@@ -1,13 +1,30 @@
+'use client'
 import { invoicecreation } from '@/data/invoicecreation'
 import React from 'react'
+import toast, { Toaster } from 'react-hot-toast'
 
 const page = () => {
+
+  const notify = () => toast.success((t)=>{
+    return (
+        <div className="flex items-center justify-center flex-col gap-1">
+            <p>Invoice Created</p>
+            <button onClick={()=>
+                toast.dismiss(t.id)
+            } className='bg-[#481620] text-white py-1 px-3 rounded-md'>Close</button>
+        </div>
+    )
+  })
+
   return (
     <div>
         <div className='bg-[#F0F3F5] m-5 p-10 rounded-lg '>
             <h2 className='m-5'>To</h2>
             <div>
-                <form className="w-full p-5 grid gap-x-10 sm:grid-cols-1 md:grid-cols-2">
+                <form onSubmit={(e)=>{
+                  e.preventDefault()
+                  
+                }} className="w-full p-5 grid gap-x-10 sm:grid-cols-1 md:grid-cols-2">
                   {invoicecreation.map((option) => (
                     <div key={option.id} className="mb-5 grid grid-cols-2">
                       <label
@@ -25,10 +42,11 @@ const page = () => {
                   ))}
                    
                    <div className="md:col-span-2 flex justify-end">
-                    <button className="bg-[#481620] w-[7rem] text-white py-2 px-2 rounded-xl">
-                      Create
-                    </button>
-                  </div>
+                    <div>
+                        <button onClick={notify} className="bg-[#481620] text-white py-1 px-3 rounded-md">Create</button>
+                        <Toaster />
+                      </div>
+                    </div>
                 
                 </form>
             </div>

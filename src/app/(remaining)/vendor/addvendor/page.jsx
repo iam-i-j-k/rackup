@@ -1,8 +1,22 @@
+'use client'
 import React from 'react';
 import Back from '@/components/Back';
 import { addvendor } from '@/data/addvendor';
+import toast, { Toaster } from 'react-hot-toast';
 
 const page = () => {
+
+  const notify = () => toast.success((t)=>{
+    return (
+        <div className="flex items-center justify-center flex-col gap-1">
+            <p>Vendor Added Succesfully</p>
+            <button onClick={()=>
+                toast.dismiss(t.id)
+            } className='bg-[#481620] text-white py-1 px-3 rounded-md'>Close</button>
+        </div>
+    )
+  })
+
   return (
     <div>
       <Back 
@@ -12,7 +26,9 @@ const page = () => {
         <h2 className="font-semibold text-lg mb-4">
           Add Vendor
         </h2>
-        <form className="w-full p-5 grid gap-x-10 sm:grid-cols-1 md:grid-cols-2">
+        <form onSubmit={(e)=>{
+          e.preventDefault();
+        }} className="w-full p-5 grid gap-x-10 sm:grid-cols-1 md:grid-cols-2">
           {addvendor.map((option) => (
             <div key={option.id} className="mb-5 grid grid-cols-2">
               <label
@@ -29,9 +45,11 @@ const page = () => {
             </div>
           ))}
            <div className="md:col-span-2 flex justify-end">
-            <button className="bg-[#481620] w-[7rem] text-white py-2 px-2 rounded-xl">
-              Submit
-            </button>
+            
+           <div>
+              <button onClick={notify} className="bg-[#481620] text-white py-1 px-3 rounded-md">Submit</button>
+              <Toaster />
+            </div>
           </div>
 
         </form>

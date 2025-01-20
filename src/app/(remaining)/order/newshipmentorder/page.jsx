@@ -1,8 +1,23 @@
+'use client'
 import React from 'react';
 import Back from '@/components/Back';
 import { newshipmentorder } from '@/data/newshipmentorder';
+import toast, { Toaster } from 'react-hot-toast';
 
 const page = () => {
+
+  const notify = () => toast.success((t)=>{
+    return (
+        <div className="flex items-center justify-center flex-col gap-1">
+            <p>Order Placed Successfully</p>
+            <button onClick={()=>
+                toast.dismiss(t.id)
+            } className='bg-[#481620] text-white py-1 px-3 rounded-md'>Close</button>
+        </div>
+    )
+  })
+
+
   return (
     <div>
       <Back 
@@ -12,7 +27,9 @@ const page = () => {
         <h2 className="font-semibold text-lg mb-4">
           New Shipment Order
         </h2>
-        <form className="w-full p-5 grid gap-x-10 sm:grid-cols-1 md:grid-cols-2">
+        <form onSubmit={(e)=>{
+          e.preventDefault();
+        }} className="w-full p-5 grid gap-x-10 sm:grid-cols-1 md:grid-cols-2">
           {newshipmentorder.map((option) => (
             <div key={option.id} className="mb-5 grid grid-cols-2">
               <label
@@ -29,9 +46,11 @@ const page = () => {
             </div>
           ))}
            <div className="md:col-span-2 flex justify-end">
-            <button className="bg-[#481620] w-[9rem] text-white py-2 px-3 rounded-xl">
-              Order Now
-            </button>
+            
+           <div>
+              <button onClick={notify} className="bg-[#481620] text-white py-1 px-3 rounded-md">Order Now</button>
+              <Toaster />
+            </div>
           </div>
 
         </form>

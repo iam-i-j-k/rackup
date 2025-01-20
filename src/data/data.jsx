@@ -68,7 +68,6 @@ export const data = [
         { "id": 603, "title": "Warehouse Space Utilization", "link": "/reports/warehousespaceutilization" },
         { "id": 604, "title": "Employee Productivity", "link": "/reports/employeeproductivity" },
         { "id": 605, "title": "Vendor Performance", "link": "/reports/vendorperformance" },
-        { "id": 606, "title": "Customizable Reports", "link": "/reports/customizablereports" }
       ]
     },
     {
