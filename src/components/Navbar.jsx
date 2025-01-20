@@ -72,12 +72,23 @@ const Navbar = () => {
   return (
     <div className='font-Onest'>
         {/* Top Navbar */}
-        <div className="border-gray-200 font-Onest bg-[#0075A2]">
+        <div className="relative border-gray-200 font-Onest bg-[#0f5edc]">
+            {/* Left gradient span - adjusts width and position based on screen size */}
+            <span className="absolute left-26 md:left-32 lg:left-54 w-20 md:w-32 lg:w-48 h-full z-10 bg-gradient-to-r from-[#5F1EBE00]  via-[#5F1EBE] to-transparent"></span>
+            <span className="absolute left-36 md:left-32 lg:left-64 w-20 md:w-32 lg:w-48 h-full z-10 bg-gradient-to-r from-[#5F1EBE00] via-[#5F1EBE] to-transparent"></span>
+
+            {/* Right radial gradient span - adjusts position and blur based on screen size */}
+            <span
+              className="absolute blur-[26px] bottom-5 md:bottom-5 lg:bottom-10 right-24 md:right-32 lg:right-64 w-12 md:w-16 lg:w-20 h-full z-50 rounded-full"
+              style={{
+                background: 'radial-gradient(circle at center, #fff 0%, #D9D9D900 75%)',
+              }}
+            ></span>
             <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
               {/* Logo */}
               <a
                 href="https://rackup.vercel.app/dashboard"
-                className="flex items-center space-x-3 rtl:space-x-reverse"
+                className="flex items-center space-x-3 rtl:space-x-reverse z-20"
               >
                 <img src="/box.svg" alt="Box" />
                 <span className="self-center text-white text-2xl font-semibold whitespace-nowrap">
@@ -128,7 +139,7 @@ const Navbar = () => {
                       viewBox="0 0 16 16"
                       xmlns="http://www.w3.org/2000/svg"
                       className="w-6 h-6"
-                      fill="currentColor"
+                      fill="005D80"
                     >
                       <path d="M13,5c0-2.761-2.239-5-5-5S3,2.239,3,5v5l-3,2v1h16v-1l-3-2V5z" />
                       <path d="M10,14H6c0,1.105,0.895,2,2,2S10,15.105,10,14z" />
@@ -168,7 +179,7 @@ const Navbar = () => {
                             className="absolute right-0 z-50 mt-2 w-48 bg-white rounded-lg shadow-lg"
                             >
                             <div className="px-4 py-3">
-                                <p className="text-sm text-gray-700">Irfan Jan Khan</p>
+                                <p className="text-sm text-gray-700">Irshad Khan</p>
                                 <p className="text-xs text-gray-500 truncate">name@rackup.com</p>
                             </div>
                             <div className="py-2">
