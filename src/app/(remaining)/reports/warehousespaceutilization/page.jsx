@@ -2,7 +2,6 @@
 
 import React from 'react';
 import { invoicecreation } from '@/data/invoicecreation';
-import toast, { Toaster } from 'react-hot-toast';
 import { useRouter } from 'next/navigation';
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
@@ -12,19 +11,6 @@ const page = () => {
   const MySwal = withReactContent(Swal)
   const router = useRouter();
 
-  const notify = () => toast.success((t)=>{
-    return (
-        <div className="flex items-center justify-center flex-col gap-1">
-            <p>Report Generated Successfully</p>
-            <button onClick={()=>
-                {
-                  // toast.dismiss(t.id)
-                  router.push('/reports/customizablereports')
-              }
-            } className='bg-[#481620] text-white py-1 px-3 rounded-md'>Click to view Report</button>
-        </div>
-    )
-  })
 
   return (
     <div>
@@ -61,7 +47,6 @@ const page = () => {
             
            <div>
               <button className="bg-[#481620] text-white py-1 px-3 rounded-md">Generate</button>
-              <Toaster />
             </div>
           </div>
 
