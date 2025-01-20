@@ -2,20 +2,13 @@
 import React from 'react';
 import Back from '@/components/Back';
 import { newreturnorder } from '@/data/newreturnorder';
-import toast, { Toaster } from 'react-hot-toast';
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
 
 const page = () => {
 
-  const notify = () => toast.success((t)=>{
-    return (
-        <div className="flex items-center justify-center flex-col gap-1">
-            <p>Order Placed Successfully</p>
-            <button onClick={()=>
-                toast.dismiss(t.id)
-            } className='bg-[#481620] text-white py-1 px-3 rounded-md'>Close</button>
-        </div>
-    )
-  })
+  const MySwal = withReactContent(Swal)
+
   return (
     <div>
       <Back 
@@ -23,9 +16,13 @@ const page = () => {
       />
       <div className="h-auto m-5 p-5 rounded-xl bg-[#F0F3F5]">
         <form onSubmit={(e)=>{
-          e.preventDefault();
-          notify()
-        }} className="w-full p-5 grid gap-x-10 sm:grid-cols-1 md:grid-cols-2">
+          e.preventDefault()
+          MySwal.fire({
+            title: "Done!",
+            text: "Return Order Placed Successfully!",
+            icon: "success"
+          });
+          }} className="w-full p-5 grid gap-x-10 sm:grid-cols-1 md:grid-cols-2">
           {newreturnorder.map((option) => (
             <div key={option.id} className="mb-5 grid grid-cols-2">
               <label
@@ -45,7 +42,6 @@ const page = () => {
            <div className="md:col-span-2 flex justify-end">
            <div>
               <button className="bg-[#481620] text-white py-1 px-3 rounded-md">Submit</button>
-              <Toaster />
             </div>
           </div>
 
