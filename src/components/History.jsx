@@ -32,7 +32,7 @@ const History = ({ onClose }) => {
             <span className='w-full h-[2px] bg-gray-300'></span>
         </div>
         <div className='flex items-center gap-5'>
-            <a className='flex justify-center items-center gap-5' href="/inovice/invoicecreation">
+            <a className='flex justify-center items-center gap-5' href="/invoice/invoicecreation">
                 <p className='text-sm'>Invoice creation</p>
             </a>
         </div>
