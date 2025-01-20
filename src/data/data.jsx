@@ -5,10 +5,9 @@ export const data = [
       "link": "/inventory",
       "children": [
         { "id": 101, "title": "Item Categories", "link": "/inventory/itemcategory" },
-        { "id": 102, "title": "Item Details", "link": "/inventory/itemdetails" },
-        { "id": 103, "title": "Stock Levels", "link": "/inventory/stocklevels" },
-        { "id": 104, "title": "Inventory Audit", "link": "/inventory/inventoryaudit" },
-        { "id": 105, "title": "Reports", "link": "/inventory/reports" }
+        { "id": 102, "title": "Stock Levels", "link": "/inventory/stocklevels" },
+        { "id": 103, "title": "Inventory Audit", "link": "/inventory/inventoryaudit" },
+        { "id": 104, "title": "Reports", "link": "/inventory/reports" }
       ]
     },
     {

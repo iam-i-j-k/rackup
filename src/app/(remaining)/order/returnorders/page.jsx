@@ -30,9 +30,7 @@ const page = () => {
                   }`}
                   key={index}
                 >
-                  <td className="px-2 py-5">
-                    {item.id}
-                  </td>
+                  <td className='py-5'><a className='hover:underline text-blue-800' href="/inventory/itemdetails">{item.id}</a></td>
                   <td className="px-2 py-5">{item.description}</td>
                   <td className="px-2 py-5">{item.purchasedate}</td>
                   <td className="px-2 py-5">{item.returnrequestnumber}</td>
