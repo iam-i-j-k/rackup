@@ -212,19 +212,19 @@ const Navbar = () => {
           </div>
   
           {/* Bottom Navigation Links */}
-          <div className="bg-gray-50 dark:bg-gray-700">
+          <div className="bg-[#5F1EBE] dark:bg-gray-700">
             <div className="max-w-screen-xl px-4 py-3 mx-auto">
               <ul className="flex items-center justify-start md:flex-row gap-10 font-medium  md:space-y-0 md:space-x-8 text-sm">    
                 <li>
                   <a
                     onClick={handleMoreDropdown}
                     id="dropdownNavbarLink"
-                    className="cursor-pointer flex items-center hover:underline w-full text-gray-900 hover:bg-gray-100"
+                    className="cursor-pointer flex items-center hover:underline w-full text-white"
                   >
                     All
                     <svg
                       className={`w-4 h-4 transform rotate-90`}
-                      fill="black"
+                      fill="white"
                       viewBox="0 0 100 100"
                       xmlns="http://www.w3.org/2000/svg"
                     >
@@ -236,7 +236,7 @@ const Navbar = () => {
                   { moreDropdown && (
                     <div
                         id="dropdownNavbar"
-                        className="absolute bg-white shadow rounded-b-xl"
+                        className="absolute bg-white shadow"
                     >
                       <Image
                         src="/crumpiedfabric.jpg"
@@ -340,7 +340,7 @@ const Navbar = () => {
                 </li>
                 <li>
                   <div className='relative'>
-                    <button onClick={toggleFavourites} className="text-gray-900 dark:text-white hover:underline">
+                    <button onClick={toggleFavourites} className="text-white dark:text-white hover:underline">
                       Favourites
                     </button>
                     { favourites && (
@@ -352,7 +352,7 @@ const Navbar = () => {
                 </li>
                 <li>
                 <div className='relative'>
-                    <button onClick={toggleHistory} className="text-gray-900 dark:text-white hover:underline">
+                    <button onClick={toggleHistory} className="text-white dark:text-white hover:underline">
                       History
                     </button>
                     { history && (
