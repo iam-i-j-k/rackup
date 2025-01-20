@@ -64,6 +64,7 @@ const Page = () => {
           <div className="space-y-2">
             <label className="block font-medium text-gray-700">Title</label>
             <input
+              required
               type="text"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
@@ -76,6 +77,7 @@ const Page = () => {
           <div className="space-y-2">
             <label className="block font-medium text-gray-700">Author</label>
             <input
+              required
               type="text"
               value={author}
               onChange={(e) => setAuthor(e.target.value)}

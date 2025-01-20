@@ -1,15 +1,31 @@
+'use client'
 import React from 'react';
 import Back from '@/components/Back';
 import { newreturnorder } from '@/data/newreturnorder';
+import toast, { Toaster } from 'react-hot-toast';
 
 const page = () => {
+
+  const notify = () => toast.success((t)=>{
+    return (
+        <div className="flex items-center justify-center flex-col gap-1">
+            <p>Order Placed Successfully</p>
+            <button onClick={()=>
+                toast.dismiss(t.id)
+            } className='bg-[#481620] text-white py-1 px-3 rounded-md'>Close</button>
+        </div>
+    )
+  })
   return (
     <div>
       <Back 
         link={"order/returnorders"}
       />
       <div className="h-auto m-5 p-5 rounded-xl bg-[#F0F3F5]">
-        <form className="w-full p-5 grid gap-x-10 sm:grid-cols-1 md:grid-cols-2">
+        <form onSubmit={(e)=>{
+          e.preventDefault();
+          notify()
+        }} className="w-full p-5 grid gap-x-10 sm:grid-cols-1 md:grid-cols-2">
           {newreturnorder.map((option) => (
             <div key={option.id} className="mb-5 grid grid-cols-2">
               <label
@@ -19,6 +35,7 @@ const page = () => {
                 {option.title}
               </label>
               <input
+                required
                 type="text"
                 id={`input-${option.id}`}
                 className="bg-gray-50 border h-fit border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 w-full dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
@@ -26,9 +43,10 @@ const page = () => {
             </div>
           ))}
            <div className="md:col-span-2 flex justify-end">
-            <button className="bg-[#481620] w-[9rem] text-white py-2 px-3 rounded-xl">
-              Submit
-            </button>
+           <div>
+              <button className="bg-[#481620] text-white py-1 px-3 rounded-md">Submit</button>
+              <Toaster />
+            </div>
           </div>
 
         </form>
