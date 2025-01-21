@@ -22,7 +22,7 @@ const page = () => {
           e.preventDefault()
           MySwal.fire({
             title: "Done!",
-            text: "Vendor Added Successfully!",
+            text: "Report Generated Successfully!",
             icon: "success"
           });
           router.push('/reports/customizablereports')
