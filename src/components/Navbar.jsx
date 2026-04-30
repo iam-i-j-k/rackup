@@ -167,7 +167,7 @@ const Navbar = () => {
                           className="flex text-sm bg-gray-800 rounded-full focus:outline-none"
                       >
                           <span className="bg-[#54ded9] flex items-center justify-center text-md font-light tracking-wider text-center w-8 h-8 rounded-full">
-                          IK
+                          U
                           </span>
                       </button>
   
