@@ -65,7 +65,6 @@ export const data = [
       "children": [
         { "id": 601, "title": "Inventory Turnover Rate", "link": "/reports/inventoryturnoverrate" },
         { "id": 602, "title": "Order Fulfillment Efficiency", "link": "/reports/orderfulfillmentefficiency" },
-        { "id": 603, "title": "Warehouse Space Utilization", "link": "/reports/warehousespaceutilization" },
         { "id": 604, "title": "Employee Productivity", "link": "/reports/employeeproductivity" },
         { "id": 605, "title": "Vendor Performance", "link": "/reports/vendorperformance" },
       ]
