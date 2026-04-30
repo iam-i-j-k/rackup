@@ -178,7 +178,7 @@ const Navbar = () => {
                             className="absolute right-0 z-50 mt-2 w-48 bg-white rounded-lg shadow-lg"
                             >
                             <div className="px-4 py-3">
-                                <p className="text-sm text-gray-700">Irshad Khan</p>
+                                <p className="text-sm text-gray-700">User</p>
                                 <p className="text-xs text-gray-500 truncate">name@rackup.com</p>
                             </div>
                             <div className="py-2">
